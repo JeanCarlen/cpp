@@ -4,18 +4,20 @@
 #include <fstream>
 
 
-static void	replace(std::string& line, char *s1, char *s2)
+std::string	ft_replace(std::string line, std::string s1, std::string s2)
 {
-	size_t start;
-	size_t length;
-	
-	start = line.find(s1);
-	length = strlen(s1);
-	while (start != std::string::npos) //npos == "until the end of the string"
+	size_t	erase_length = s1.length();
+	size_t	replace_length = s2.length();
+	size_t	pos_search = 0;
+
+	pos_search = line.find(s1);
+	while (pos_search != std::string::npos)
 	{
-		line.replace(start, length, s2);
-		start = line.find(s1, start);
+		line.erase(pos_search, erase_length);
+		line.insert(pos_search, s2);
+		pos_search = line.find(line, pos_search + replace_length);
 	}
+	return (line);
 }
 
 
@@ -23,32 +25,37 @@ int main(int ac, char **av)
 {
 	std::ifstream	file(av[1]);
 	std::string 	line;
-	char	*s1;
-	char	*s2;
-	s1 = strdup(av[2]);
-	s2 = strdup(av[3]);
 
-	if (ac != 4 || av[1][0] == '\0' || av[2][0] == '\0' || av[3][0] == '\0')
+	if (ac != 4)
+	{
 		std::cout << "synthax error: no empty argument or please use => file s1 s2\n";
+		return (0);
+	}
+
+	std::string s1 = (std::string)av[2];
+	std::string s2 = (std::string)av[3];
+
 	if (!file.is_open())
 	{
 		std::cout << "Coulnd't open the input file" << std::endl;
 		return (-1);
 	}
 	std::string	file_name = (std::string)av[1] + ".replace";
-	std::ofstream	out(file_name);
+	std::ofstream	out;
+	out.open(file_name, std::ios::out | std::ios::trunc);
 	if(!out.is_open())
 	{
 		std::cout << "Coulnd't open the output file" << std::endl;
 		return (-1);
 	}
-	while (getline(file, line))
+	while (std::getline(file, line))
 	{
-		replace(line, s1, s2);
-		out << line << std::endl;
+		line = ft_replace(line, s1, s2);
+		out << line;
+		if (file.peek() != EOF)
+			out << std::endl;
 	}
-	//free(s1);
-	//free(s2);
+	out << std::endl;
 	out.close();
 	file.close();
 	return (0);
