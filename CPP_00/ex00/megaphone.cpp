@@ -11,9 +11,10 @@ int		main(int ac, char **av)
 	else while (++i < ac)
 	{
 		j = 0;
+		std::string	line(av[i]);
 		while (av[i][j])
 		{
-			std::cout << (char)toupper(av[i][j]);
+			std::cout << static_cast<char>(std::toupper(line.at(j)));
 			j++;
 		}
 	}
