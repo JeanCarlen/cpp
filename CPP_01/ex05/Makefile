@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/16 11:30:06 by jcarlen           #+#    #+#              #
-#    Updated: 2023/01/16 11:30:07 by jcarlen          ###   ########.ch        #
+#    Created: 2023/01/16 12:15:43 by jcarlen           #+#    #+#              #
+#    Updated: 2023/01/16 13:09:46 by jcarlen          ###   ########.ch        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Zombie
+NAME = harl
 
-SRCS = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRCS = main.cpp Harl.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 

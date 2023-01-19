@@ -5,27 +5,27 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/16 11:30:06 by jcarlen           #+#    #+#              #
-#    Updated: 2023/01/16 11:30:07 by jcarlen          ###   ########.ch        #
+#    Created: 2023/01/19 14:03:30 by jcarlen           #+#    #+#              #
+#    Updated: 2023/01/19 14:23:02 by jcarlen          ###   ########.ch        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Zombie
+NAME = out
 
-SRCS = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-CC  = c++
+CXX  = c++
 
 RM  = rm -f
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-		$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+		$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 clean:
 		$(RM) $(OBJS)

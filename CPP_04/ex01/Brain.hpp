@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 11:31:02 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/01/16 11:31:04 by jcarlen          ###   ########.ch       */
+/*   Created: 2023/01/19 14:20:52 by jcarlen           #+#    #+#             */
+/*   Updated: 2023/01/19 15:12:57 by jcarlen          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-Zombie::Zombie(std::string name): _name(name)
-{
-	std::cout << _name << ": named\n";
-}
+# include <iostream>
+# include <string>
 
-Zombie::Zombie()
+class Brain
 {
-	std::cout << ": standard\n";
-	return;
-}
+	private:
+			std::string	_ideas[100];
+			std::string _type;
+	public:
+			Brain();
+			Brain(Brain const &og);
+			~Brain();
+			Brain& operator=(Brain const &rhs);
+};
 
-Zombie::~Zombie()
-{
-	std::cout << _name << ": is now dead\n";
-	return ;
-}
-
-void	Zombie::announce() const
-{
-	std::cout << _name << ":  BraiiiiiiinnnzzzZ...\n";
-	return ;
-}
-
-void	Zombie::set_name(std::string name)
-{
-	_name = name;
-}
+#endif

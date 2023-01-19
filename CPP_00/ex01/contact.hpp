@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   contact.hpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/16 11:12:08 by jcarlen           #+#    #+#             */
+/*   Updated: 2023/01/16 11:30:10 by jcarlen          ###   ########.ch       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 #include <iomanip>
@@ -19,7 +31,6 @@ class contact
 		std::string getphone_number();
 		std::string getsecret();
 
-		void display();
 		void setfirstname(std::string fname);
 		void setlastname(std::string lname);
 		void setnickname(std::string nname);

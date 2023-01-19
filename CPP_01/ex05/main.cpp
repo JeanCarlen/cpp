@@ -1,41 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 11:31:02 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/01/16 11:31:04 by jcarlen          ###   ########.ch       */
+/*   Created: 2023/01/16 12:19:14 by jcarlen           #+#    #+#             */
+/*   Updated: 2023/01/16 13:08:05 by jcarlen          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+# include "Harl.hpp"
 
-Zombie::Zombie(std::string name): _name(name)
+int main( void )
 {
-	std::cout << _name << ": named\n";
-}
+	std::string	inpt;
+	Harl		harl;
 
-Zombie::Zombie()
-{
-	std::cout << ": standard\n";
-	return;
-}
+	do
+	{
+		std::cout << "Enter a level: ";
+		std::cin >> inpt;
+		harl.complain(inpt);
+	} while 
+	(inpt.compare("exit"));
 
-Zombie::~Zombie()
-{
-	std::cout << _name << ": is now dead\n";
-	return ;
-}
-
-void	Zombie::announce() const
-{
-	std::cout << _name << ":  BraiiiiiiinnnzzzZ...\n";
-	return ;
-}
-
-void	Zombie::set_name(std::string name)
-{
-	_name = name;
+	return (0);
 }

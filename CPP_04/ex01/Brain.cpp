@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 11:31:02 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/01/16 11:31:04 by jcarlen          ###   ########.ch       */
+/*   Created: 2023/01/19 14:20:57 by jcarlen           #+#    #+#             */
+/*   Updated: 2023/01/19 15:16:50 by jcarlen          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+# include "Brain.hpp"
 
-Zombie::Zombie(std::string name): _name(name)
+Brain::Brain()
 {
-	std::cout << _name << ": named\n";
+	std::cout << "Brain constructor called\n";
 }
 
-Zombie::Zombie()
+Brain::Brain(Brain const &og)
 {
-	std::cout << ": standard\n";
-	return;
+	this->_type = og._type;
+	std::cout << "Brain copy constructor called\n";
 }
 
-Zombie::~Zombie()
+Brain::~Brain()
 {
-	std::cout << _name << ": is now dead\n";
-	return ;
+	std::cout << "Brain destructor called\n";
 }
 
-void	Zombie::announce() const
+Brain& Brain::operator=(Brain const &rhs)
 {
-	std::cout << _name << ":  BraiiiiiiinnnzzzZ...\n";
-	return ;
+	this->_type = rhs._type;
+	return (*this);
 }
 
-void	Zombie::set_name(std::string name)
-{
-	_name = name;
-}

@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 11:31:02 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/01/16 11:31:04 by jcarlen          ###   ########.ch       */
+/*   Created: 2023/01/19 13:51:15 by jcarlen           #+#    #+#             */
+/*   Updated: 2023/01/19 14:09:30 by jcarlen          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-Zombie::Zombie(std::string name): _name(name)
-{
-	std::cout << _name << ": named\n";
-}
+# include <iostream>
+# include <string>
+# include "WrongAnimal.hpp"
 
-Zombie::Zombie()
+class WrongCat : public WrongAnimal
 {
-	std::cout << ": standard\n";
-	return;
-}
+	public:
+			WrongCat(WrongCat &og);
+			WrongCat();
+			~WrongCat();
+			WrongCat &operator=(WrongCat &rhs);
+			void makeSound() const;
+};
 
-Zombie::~Zombie()
-{
-	std::cout << _name << ": is now dead\n";
-	return ;
-}
-
-void	Zombie::announce() const
-{
-	std::cout << _name << ":  BraiiiiiiinnnzzzZ...\n";
-	return ;
-}
-
-void	Zombie::set_name(std::string name)
-{
-	_name = name;
-}
+#endif

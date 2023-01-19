@@ -1,7 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/16 11:12:42 by jcarlen           #+#    #+#             */
+/*   Updated: 2023/01/16 11:23:07 by jcarlen          ###   ########.ch       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "phonebook.hpp"
-
-
-
 
 void alert_msg()
 {
@@ -109,7 +118,7 @@ void PhoneBook::display()
 		<< truncate(contacts[i].getlast_name(), 10) << '|'
 		<< truncate(contacts[i].getnickname(), 10) <<  '|' << std::endl;
 	}
-	std::cout << std::string(45, '-') << std::endl;
+	std::cout << std::string(45, '=') << std::endl;
 
 }
 
@@ -124,7 +133,7 @@ void PhoneBook::search_contact()
 		exit(1);
 	if(s_id < "0" || s_id > "9")
 	{
-		std::cout << "Choose a valid ID\n";
+		std::cout << "Choose a existing ID\n";
 		return ;
 	}
 

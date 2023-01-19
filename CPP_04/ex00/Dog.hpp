@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 11:31:02 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/01/16 11:31:04 by jcarlen          ###   ########.ch       */
+/*   Created: 2023/01/19 13:53:55 by jcarlen           #+#    #+#             */
+/*   Updated: 2023/01/19 14:05:57 by jcarlen          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef DOG_HPP
+# define DOG_HPP
 
-Zombie::Zombie(std::string name): _name(name)
-{
-	std::cout << _name << ": named\n";
-}
+# include <iostream>
+# include <string>
+# include "Animal.hpp"
 
-Zombie::Zombie()
+class Dog : public Animal
 {
-	std::cout << ": standard\n";
-	return;
-}
+	public:
+			Dog(Dog &og);
+			Dog();
+			~Dog();
+			Dog &operator=(Dog &rhs);
+			void makeSound() const;
+};
 
-Zombie::~Zombie()
-{
-	std::cout << _name << ": is now dead\n";
-	return ;
-}
-
-void	Zombie::announce() const
-{
-	std::cout << _name << ":  BraiiiiiiinnnzzzZ...\n";
-	return ;
-}
-
-void	Zombie::set_name(std::string name)
-{
-	_name = name;
-}
+#endif

@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 11:31:02 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/01/16 11:31:04 by jcarlen          ###   ########.ch       */
+/*   Created: 2023/01/19 14:03:33 by jcarlen           #+#    #+#             */
+/*   Updated: 2023/01/19 15:16:50 by jcarlen          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "Brain.hpp"
 
-Zombie::Zombie(std::string name): _name(name)
+int main() 
 {
-	std::cout << _name << ": named\n";
-}
+	const Animal* j = new Dog(); 
+	const Animal* i = new Cat();
 
-Zombie::Zombie()
-{
-	std::cout << ": standard\n";
-	return;
-}
+	delete j;
+	delete i;
 
-Zombie::~Zombie()
-{
-	std::cout << _name << ": is now dead\n";
-	return ;
-}
-
-void	Zombie::announce() const
-{
-	std::cout << _name << ":  BraiiiiiiinnnzzzZ...\n";
-	return ;
-}
-
-void	Zombie::set_name(std::string name)
-{
-	_name = name;
+	return(0);
 }

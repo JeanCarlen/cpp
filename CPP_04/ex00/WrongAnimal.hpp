@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 12:14:34 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/01/16 12:14:35 by jcarlen          ###   ########.ch       */
+/*   Created: 2023/01/19 13:58:24 by jcarlen           #+#    #+#             */
+/*   Updated: 2023/01/19 14:05:54 by jcarlen          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 # include <iostream>
+# include <string>
 
-class Weapon
+class WrongAnimal 
 {
-	private:
+	protected:
 		std::string	_type;
 
 	public:
-		Weapon(std::string type);
-		Weapon();
-		~Weapon();
-		std::string	const & getType() const;
-		void	setType(std::string new_type);
+		WrongAnimal(std::string type = "Wrong");
+		WrongAnimal( WrongAnimal const & src );
+		virtual ~WrongAnimal( void );
+
+		WrongAnimal	&operator=( WrongAnimal const & src );
+
+		void		set_type( std::string const value );
+
+		std::string	get_type( void ) const;
+
+		virtual void makeSound() const;
+
 };
 
 #endif

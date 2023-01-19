@@ -1,41 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 11:31:02 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/01/16 11:31:04 by jcarlen          ###   ########.ch       */
+/*   Created: 2023/01/19 13:57:04 by jcarlen           #+#    #+#             */
+/*   Updated: 2023/01/19 14:13:45 by jcarlen          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Dog.hpp"
 
-Zombie::Zombie(std::string name): _name(name)
+Dog::Dog(Dog &og) : Animal(og.getType())
 {
-	std::cout << _name << ": named\n";
+		std::cout << "Dog copy constructor called\n";
 }
 
-Zombie::Zombie()
+Dog::Dog(void): Animal("Dog")
 {
-	std::cout << ": standard\n";
-	return;
+	std::cout << "Dog default constructor called\n";
 }
 
-Zombie::~Zombie()
+Dog::~Dog()
 {
-	std::cout << _name << ": is now dead\n";
-	return ;
+	std::cout << "Dog destructor called\n";
 }
 
-void	Zombie::announce() const
+Dog	&Dog::operator=(Dog &rhs)
 {
-	std::cout << _name << ":  BraiiiiiiinnnzzzZ...\n";
-	return ;
+	this->_type = rhs._type;
+	return (*this);
 }
 
-void	Zombie::set_name(std::string name)
+void	Dog::makeSound() const
 {
-	_name = name;
+	std::cout << this->_type << " ->Bark Bark Bark\n";
 }
