@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jeancarlen <jeancarlen@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:55:14 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/01/19 15:02:12 by jcarlen          ###   ########.ch       */
+/*   Updated: 2023/01/20 12:58:55 by jeancarlen       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,14 @@ Cat	&Cat::operator=(Cat &rhs)
 void	Cat::makeSound() const
 {
 	std::cout << this->_type << " -> Mew mew mew\n";
+}
+
+void	Cat::setIdea(int i, std::string val)
+{
+	this->_brain->setIdea(i, val);
+}
+
+std::string	Cat::getIdea(int i)
+{
+	return (this->_brain->getIdea(i));
 }

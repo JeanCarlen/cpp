@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jeancarlen <jeancarlen@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:51:36 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/01/19 14:06:00 by jcarlen          ###   ########.ch       */
+/*   Updated: 2023/01/20 12:48:05 by jeancarlen       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ class Animal
 			Animal& operator=(Animal const &rhs);
 			std::string getType() const;
 			virtual void makeSound() const;
+			virtual void setIdea(int i, std::string val) = 0;
+			virtual std::string	getIdea(int i) = 0;
 };
 
 #endif

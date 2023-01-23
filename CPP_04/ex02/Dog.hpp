@@ -6,7 +6,7 @@
 /*   By: jeancarlen <jeancarlen@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:53:55 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/01/20 12:45:54 by jeancarlen       ###   ########.fr       */
+/*   Updated: 2023/01/20 13:34:33 by jeancarlen       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 # include <iostream>
 # include <string>
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 # include "Brain.hpp"
 
-class Dog : public Animal
+class Dog : public AAnimal
 {
 	private:
 			Brain*	_brain;

@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeancarlen <jeancarlen@student.42.fr>      +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 13:53:55 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/01/20 12:45:54 by jeancarlen       ###   ########.fr       */
+/*   Created: 2023/01/19 13:53:01 by jcarlen           #+#    #+#             */
+/*   Updated: 2023/01/20 12:46:3 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
 # include <iostream>
 # include <string>
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 # include "Brain.hpp"
 
-class Dog : public Animal
+class Cat : public AAnimal
 {
 	private:
 			Brain*	_brain;
 	public:
-			Dog(Dog &og);
-			Dog();
-			~Dog();
-			Dog &operator=(Dog &rhs);
+			Cat(Cat &og);
+			Cat();
+			~Cat();
+			Cat &operator=(Cat &rhs);
 			void makeSound() const;
 			void	setIdea(int i, std::string val);
 			std::string	getIdea(int i);

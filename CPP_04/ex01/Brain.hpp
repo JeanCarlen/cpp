@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jeancarlen <jeancarlen@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:20:52 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/01/19 15:12:57 by jcarlen          ###   ########.ch       */
+/*   Updated: 2023/01/20 13:30:50 by jeancarlen       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ class Brain
 			Brain(Brain const &og);
 			~Brain();
 			Brain& operator=(Brain const &rhs);
+			void	setIdea(int i, std::string val);
+			std::string getIdea(int i);
 };
 
 #endif

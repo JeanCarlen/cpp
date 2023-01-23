@@ -1,52 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>        +#+  +:+       +#+        */
+/*   By: jeancarlen <jeancarlen@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 13:57:04 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/01/20 12:44:3 by marvin        ###   ########.fr       */
+/*   Created: 2023/01/19 13:55:14 by jcarlen           #+#    #+#             */
+/*   Updated: 2023/01/20 13:34:33 by jeancarlen       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
-Dog::Dog(Dog &og) : Animal(og.getType())
+Cat::Cat(Cat &og) : AAnimal(og.getType())
 {
 	this->_brain = new Brain(*og._brain);
-	std::cout << "Dog copy constructor called\n";
+	std::cout << "Cat copy constructor called\n";
 }
 
-Dog::Dog(void): Animal("Dog")
+Cat::Cat(void): AAnimal("Cat")
 {
 	this->_brain = new Brain;
-	std::cout << "Dog default constructor called\n";
+	std::cout << "Cat default constructor called\n";
 }
 
-Dog::~Dog()
+Cat::~Cat()
 {
 	delete this->_brain;
-	std::cout << "Dog destructor called\n";
+	std::cout << "Cat destructor called\n";
 }
 
-Dog	&Dog::operator=(Dog &rhs)
+Cat	&Cat::operator=(Cat &rhs)
 {
 	this->_type = rhs._type;
 	return (*this);
 }
 
-void	Dog::makeSound() const
+void	Cat::makeSound() const
 {
-	std::cout << this->_type << " ->Bark Bark Bark\n";
+	std::cout << this->_type << " -> Mew mew mew\n";
 }
 
-void	Dog::setIdea(int i, std::string val)
+void	Cat::setIdea(int i, std::string val)
 {
 	this->_brain->setIdea(i, val);
 }
 
-std::string	Dog::getIdea(int i)
+std::string	Cat::getIdea(int i)
 {
 	return (this->_brain->getIdea(i));
 }
