@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 14:32:45 by jeancarlen        #+#    #+#             */
-/*   Updated: 2023/01/23 14:41:19 by jcarlen          ###   ########.ch       */
+/*   Updated: 2023/01/24 12:38:441 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ Bureaucrat::~Bureaucrat(void)
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 {
-	std::cout << "Bureaucrat constructor called" << std::endl;
+	std::cout << "Bureaucrat constructor called => " << _name << std::endl;
+	std::cout << _name << "\n" << " grade => " << _grade << std::endl;
 	if (this->_grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	if (this->_grade > 150)
@@ -69,6 +70,19 @@ void	Bureaucrat::decrementGrade(void)
 		this->_grade += 1;
 		std::cout << "decrementing: " << this->_name << std::endl;
 	return ;
+}
+
+void	Bureaucrat::signForm(Form &form)
+{
+	std::cout << this->_name << " trying to signe => " << form.getName() << "\n";
+	try
+	{	
+		form.beSigned(*this);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << this->_name << " couldn't signe => " << e.what() << '\n';
+	}
 }
 
 const char	*Bureaucrat::GradeTooHighException::what() const throw()

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+         #
+#    By: jeancarlen <jeancarlen@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/19 14:03:30 by jcarlen           #+#    #+#              #
-#    Updated: 2023/01/19 14:23:02 by jcarlen          ###   ########.ch        #
+#    Updated: 2023/01/24 13:56:55 by jeancarlen       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,5 +34,9 @@ fclean:		clean
 		$(RM) $(NAME)
 
 re:		fclean all
+
+run: $(NAME)
+	@./out
+	@make fclean
 
 .PHONY:	all clean fclean re 

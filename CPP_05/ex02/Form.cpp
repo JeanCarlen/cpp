@@ -6,7 +6,7 @@
 /*   By: jeancarlen <jeancarlen@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 13:49:36 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/01/24 13:53:58 by jeancarlen       ###   ########.fr       */
+/*   Updated: 2023/01/24 14:19:16 by jeancarlen       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,11 @@ void Form::beSigned(Bureaucrat &signer)
 	}
 	if(signer.getGrade() > this->_signe)
 		throw Bureaucrat::GradeTooLowException();
+}
+
+const char	*Form::NotSignedException::what() const throw()
+{
+	return ("Form is not signed");
 }
 
 std::ostream	&operator<<(std::ostream &o, Form &a)

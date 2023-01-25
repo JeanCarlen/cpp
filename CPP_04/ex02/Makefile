@@ -6,11 +6,11 @@
 #    By: jeancarlen <jeancarlen@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/19 14:03:30 by jcarlen           #+#    #+#              #
-#    Updated: 2023/01/20 13:34:33 by jeancarlen       ###   ########.fr        #
+#    Updated: 2023/01/24 13:56:29 by jeancarlen       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = out
+5NAME = out
 
 SRCS = main.cpp AAnimal.cpp Cat.cpp Dog.cpp Brain.cpp
 
@@ -34,5 +34,9 @@ fclean:		clean
 		$(RM) $(NAME)
 
 re:		fclean all
+
+run: $(NAME)
+	@./out
+	@make fclean
 
 .PHONY:	all clean fclean re 
