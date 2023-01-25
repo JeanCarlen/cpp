@@ -6,14 +6,14 @@
 #    By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/19 14:03:30 by jcarlen           #+#    #+#              #
-#    Updated: 2023/01/25 14:05:11 by jcarlen          ###   ########.ch        #
+#    Updated: 2023/01/25 13:48:01 by jcarlen          ###   ########.ch        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = out
 
 SRCS =	main.cpp Bureaucrat.cpp Form.cpp \
-		PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+		PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
