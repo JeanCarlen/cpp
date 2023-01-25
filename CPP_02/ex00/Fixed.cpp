@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/25 12:27:15 by jcarlen           #+#    #+#             */
+/*   Updated: 2023/01/25 12:36:22 by jcarlen          ###   ########.ch       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 Fixed::Fixed(Fixed& original)
@@ -9,12 +21,12 @@ Fixed::Fixed(Fixed& original)
 Fixed::Fixed(void)
 {
 	this->_value = 0;
-	std::cout << "Default constuctor called\n";
+	std::cout << "Default constructor called\n";
 }
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Destuctor called\n";
+	std::cout << "Destructor called\n";
 }
 
 Fixed& Fixed::operator=(Fixed& rhs)

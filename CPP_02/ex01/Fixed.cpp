@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/25 12:29:52 by jcarlen           #+#    #+#             */
+/*   Updated: 2023/01/25 12:29:52 by jcarlen          ###   ########.ch       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 
 Fixed::Fixed(Fixed const& original)
 {
 	*this = original;
-	std::cout << "copy contructor called\n";
+	std::cout << "copy constructor called\n";
 }
 
 Fixed::Fixed(const int integer)
@@ -22,18 +34,18 @@ Fixed::Fixed(const float flo)
 Fixed::Fixed(void)
 {
 	this->_value = 0;
-	std::cout << "default constuctor called\n";
+	std::cout << "default constructor called\n";
 }
 
 Fixed::~Fixed(void)
 {
-	std::cout << "destuctor called\n";
+	std::cout << "destructor called\n";
 }
 
 Fixed& Fixed::operator=(Fixed const& rhs)
 {
-	setRawBits(rhs.getRawBits());
 	std::cout << "copy assignement operator called\n";
+	setRawBits(rhs.getRawBits());
 	return (*this);
 }
 
