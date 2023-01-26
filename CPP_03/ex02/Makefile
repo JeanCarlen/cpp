@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/01/26 13:03:26 by jcarlen           #+#    #+#              #
+#    Updated: 2023/01/26 13:05:56 by jcarlen          ###   ########.ch        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = out
 
 SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
@@ -22,5 +34,9 @@ fclean:		clean
 		$(RM) $(NAME)
 
 re:		fclean all
+
+run: $(NAME)
+	@./out
+	@make fclean
 
 .PHONY:	all clean fclean re 

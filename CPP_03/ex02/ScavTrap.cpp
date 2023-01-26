@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/26 13:03:31 by jcarlen           #+#    #+#             */
+/*   Updated: 2023/01/26 13:48:14 by jcarlen          ###   ########.ch       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 
@@ -28,20 +40,26 @@ ScavTrap::~ScavTrap()
 
 void 		ScavTrap::attack(std::string const& target)
 {
-	if (this->_mana < 2)
+	if (this->_hp == 0)
 	{
-		std::cout << "ScavTrap " << this->_name << " no mana left to attack\n";
-		std::cout << "ScavTrap " << this->_name << " has " << this->_mana << " mana\n";
+		std::cout << this->_name << " is dead\n";
+		return;
+	}
+	if (this->_mana < 1)
+	{
+		std::cout << this->_name << " no mana left to attack\n";
+		std::cout << this->_name << " has " << this->_mana << " mana\n";
+		return;
 	}
 	else
 	{
 		this->_mana -= 1;
-		std::cout << "ScavTrap " << this->_name << " PEWPEWPEW " << target;
+		std::cout << this->_name << " use ScavTrap gun on " << target;
 		std::cout << ", causing " << this->_atk << " damages \n";
 	}
 }
 
 void 		ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap is now on guard duty\n";
+	std::cout << this->_name << " is now on guard duty\n";
 }

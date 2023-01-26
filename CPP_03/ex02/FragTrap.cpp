@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/26 13:03:01 by jcarlen           #+#    #+#             */
+/*   Updated: 2023/01/26 13:48:11 by jcarlen          ###   ########.ch       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "FragTrap.hpp"
 #include "ClapTrap.hpp"
 
@@ -28,20 +40,26 @@ FragTrap::~FragTrap()
 
 void 		FragTrap::attack(std::string const& target)
 {
-	if (this->_mana < 2)
+	if (this->_hp == 0)
 	{
-		std::cout << "FragTrap " << this->_name << " no mana left to attack\n";
-		std::cout << "FragTrap " << this->_name << " has " << this->_mana << " mana\n";
+		std::cout << this->_name << " is dead\n";
+		return;
+	}
+	if (this->_mana < 1)
+	{
+		std::cout << this->_name << " no mana left to attack\n";
+		std::cout << this->_name << " has " << this->_mana << " mana\n";
+		return;
 	}
 	else
 	{
 		this->_mana -= 1;
-		std::cout << "FragTrap " << this->_name << " hit with a stick " << target;
+		std::cout << this->_name << " hit with a stick " << target;
 		std::cout << ", causing " << this->_atk << " damages \n";
 	}
 }
 
 void	FragTrap::highFivesGuys()
 {
-	std::cout << "FragTrap raise his hand in hope of a highfives\n";
+	std::cout << this->_name << " raise his hand in hope of a highfives\n";
 }

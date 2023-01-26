@@ -6,7 +6,7 @@
 /*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:02:57 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/01/25 16:37:49 by jcarlen          ###   ########.ch       */
+/*   Updated: 2023/01/26 16:42:22 by jcarlen          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@
 class Converter
 {
 	private:
+			const std::string	_value;
 			int		Cint();
 			char 	Cchar();
 			float	Cfloat();
 			double 	Cdouble();
+
 
 	public:
 			Converter();
@@ -33,10 +35,13 @@ class Converter
 			Converter(Converter &og);
 			Converter	&operator=(Converter const &rhs);
 
-			void Convert();
+
+			void	PrintInt(std::string av);
+			void	PrintChar(std::string av);
+			//void 	Convert()const;
+
+
 
 };
-
-std::ostream& operator<<( std::ostream& out, const Converter& rhs );
 
 #endif
