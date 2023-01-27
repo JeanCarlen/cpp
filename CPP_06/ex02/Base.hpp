@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 16:02:52 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/01/27 11:46:04 by jcarlen          ###   ########.ch       */
+/*   Created: 2023/01/27 15:39:05 by jcarlen           #+#    #+#             */
+/*   Updated: 2023/01/27 15:55:55 by jcarlen          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Converter.hpp"
-#include <iostream>
+#ifndef BASE_HPP
+#define BASE_HPP
 
-int main(int ac, char **av)
+
+class Base
 {
+	public:
+			virtual ~Base();
 
-	if (ac != 2)
-	{
-		std::cout << "Wrong syntax." << std::endl;
-		return 0;
-	}
 
-	Converter value(av[1]);
-	std::string	line(av[1]);
-
-	value.Convert(line);
+			Base * generate(void);
+			void identify(Base* p);
+			void identify(Base& p);
 }
+
+#endif;
+
+
+
+ctx.send('dawda')
+
+ctx.defer('je pense trop' , time_out=5)
+action x 40
+ctx.respond('sasad', ephemer=true)

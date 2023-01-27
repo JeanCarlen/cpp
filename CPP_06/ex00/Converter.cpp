@@ -6,7 +6,7 @@
 /*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:03:01 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/01/26 16:56:30 by jcarlen          ###   ########.ch       */
+/*   Updated: 2023/01/27 12:21:07 by jcarlen          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,29 @@ Converter &Converter::operator=(Converter const &rhs)
 	return *this;
 }
 
-void Converter::PrintChar(std::string av)
+void Converter::Convert(std::string av)
+{
+	size_t x = 0;
+
+	while(isdigit(av[x]))
+	{
+		x++;
+	}
+	if(x == av.length() || av.length() == 1)
+	{
+		Converter::Print_1(av);
+		Converter::Print_2(av);
+	}
+	else
+		std::cout << "Synthax error" << std::endl;
+}
+
+void Converter::Print_1(std::string av)
 {
 	const char charV = Cchar();
 	const float floatV = Cfloat();
 
-
+	std::cout << "value " << charV <<std::endl;
 	if (av == "nan" || av == "+inf" || av == "-inf" || av == "nanf" || av == "+inff" || av == "-inff")
 	{
 		std::cout << "int: impossible" << std::endl;
@@ -68,7 +85,7 @@ void Converter::PrintChar(std::string av)
 	}
 }
 
-void Converter::PrintInt(std::string av)
+void Converter::Print_2(std::string av)
 {
 	const int intV = Cint();
 	const float floatV = Cfloat();
@@ -76,7 +93,7 @@ void Converter::PrintInt(std::string av)
 	
 	if (av == "nan" || av == "+inf" || av == "-inf" || av == "nanf" || av == "+inff" || av == "-inff")
 		return;
-	if (intV < INT_MIN || intV > INT_MAX || isnan(intV))
+	if (floatV < INT_MIN || floatV > INT_MAX || isnan(intV))
 	{
 		std::cout << "int: impossible" << std::endl;
 	} 
@@ -99,6 +116,7 @@ void Converter::PrintInt(std::string av)
 
 char Converter::Cchar() 
 {
+
 	return static_cast<char>(Cfloat());
 }
 
@@ -109,7 +127,9 @@ int Converter::Cint()
 
 float Converter::Cfloat() 
 {
-	return atof(_value.c_str());
+	if(!isdigit(_value[0]))
+		return static_cast<float>(_value.c_str()[0]);
+	return atof(_value.c_str());//string to char*
 }
 
 double Converter::Cdouble() 

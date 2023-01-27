@@ -6,7 +6,7 @@
 /*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:02:57 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/01/26 16:42:22 by jcarlen          ###   ########.ch       */
+/*   Updated: 2023/01/27 11:45:49 by jcarlen          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,9 @@ class Converter
 			Converter	&operator=(Converter const &rhs);
 
 
-			void	PrintInt(std::string av);
-			void	PrintChar(std::string av);
-			//void 	Convert()const;
-
-
+			void	Print_1(std::string av);
+			void	Print_2(std::string av);
+			void 	Convert(std::string av);
 
 };
 
