@@ -6,7 +6,7 @@
 /*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 15:39:05 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/01/27 15:55:55 by jcarlen          ###   ########.ch       */
+/*   Updated: 2023/01/30 14:32:29 by jcarlen          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,13 @@ class Base
 {
 	public:
 			virtual ~Base();
-
-
 			Base * generate(void);
 			void identify(Base* p);
 			void identify(Base& p);
-}
+};
 
-#endif;
+class A : public Base {};
+class B : public Base {};
+class C : public Base {};
 
-
-
-ctx.send('dawda')
-
-ctx.defer('je pense trop' , time_out=5)
-action x 40
-ctx.respond('sasad', ephemer=true)
+#endif
