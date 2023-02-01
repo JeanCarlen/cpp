@@ -6,7 +6,7 @@
 /*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:03:01 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/01/27 12:21:07 by jcarlen          ###   ########.ch       */
+/*   Updated: 2023/02/01 16:34:28 by jcarlen          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,40 @@ Converter &Converter::operator=(Converter const &rhs)
 	return *this;
 }
 
+static int ft_isDigit(char c)
+{
+	if (!c)
+		return (0);
+	if (c < '0' || c > '9')
+		return (0);
+	return (1);
+}
+
+static size_t	checkFormat(std::string av)
+{
+	size_t	x(0);
+	int		i(0);
+
+	if (av[0] == '-' || av[0] == '+')
+		x++;
+	while(ft_isDigit(av[x]) || av[x] == '.')
+	{
+		if (av[x] == '.')
+			++i;
+		x++;
+	}
+	if (av[x] == 'f')
+		++x;
+	if (i > 1)
+		return (0);
+	return (x);
+}
+
 void Converter::Convert(std::string av)
 {
 	size_t x = 0;
 
-	while(isdigit(av[x]))
-	{
-		x++;
-	}
+	x = checkFormat(av);
 	if(x == av.length() || av.length() == 1)
 	{
 		Converter::Print_1(av);
@@ -62,7 +88,6 @@ void Converter::Print_1(std::string av)
 	const char charV = Cchar();
 	const float floatV = Cfloat();
 
-	std::cout << "value " << charV <<std::endl;
 	if (av == "nan" || av == "+inf" || av == "-inf" || av == "nanf" || av == "+inff" || av == "-inff")
 	{
 		std::cout << "int: impossible" << std::endl;
@@ -127,7 +152,7 @@ int Converter::Cint()
 
 float Converter::Cfloat() 
 {
-	if(!isdigit(_value[0]))
+	if(!ft_isDigit(_value[0]) && (_value[0] != '-' && _value[1] != '\0'))
 		return static_cast<float>(_value.c_str()[0]);
 	return atof(_value.c_str());//string to char*
 }
