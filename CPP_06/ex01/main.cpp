@@ -6,7 +6,7 @@
 /*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:02:52 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/01/27 15:35:06 by jcarlen          ###   ########.ch       */
+/*   Updated: 2023/01/31 11:36:28 by jcarlen          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,15 @@
 #include <iostream>
 #include <iomanip>
 
+/*
+**	uintptr_t:
+**	"An unsigned integer type with the property that any valid pointer to void
+**	can be converted to this type, then converted back to pointer to void,
+**	and the result will compare equal to the original pointer"
+*/
+
 typedef struct	s_data 
 {
-	int a;
-	double b;
 	std::string test;
 
 }				Data;
@@ -32,22 +37,19 @@ Data*		deserialize(uintptr_t raw)
 	return reinterpret_cast<Data *>(raw);
 }
 
-int	main( void ) 
+int	main( void )
 {
-	Data		*ptr = new Data;
-	Data		*new_ptr;
-	uintptr_t	raw;
+	Data data;
 
-	ptr->test = "Ceci est un test";
-	std::cout << std::setw(15) << std::left << "ptr->test: " << ptr->test << std::endl;
-	raw = serialize(ptr);
-	std::cout << std::setw(15) << std::left << "Raw ptr: " << raw << std::endl; 
-	new_ptr = deserialize(raw);
-	std::cout << std::setw(15) << std::left << "new_ptr->test: " << new_ptr->test << std::endl;
-	raw = serialize(new_ptr);
-	std::cout << std::setw(15) << std::left << "Raw new_ptr: " << raw << std::endl; 
-	Data *copy(deserialize(raw));
-	std::cout << std::setw(15) << std::left << "copy->test: " << copy->test << std::endl;
-	raw = serialize(copy);
-	std::cout << std::setw(15) << std::left << "Raw copy: " << raw << std::endl; 
+	data.test = "ceci est un test";
+	Data *ptr = &data;
+	uintptr_t nb = 0;
+	
+	std::cout << "string = " << data.test << std::endl;
+	std::cout << "ptr = " << ptr << std::endl;
+	std::cout << "uintptr = " << nb << std::endl;
+	nb = serialize(ptr);
+	std::cout << "nb = " << nb << std::endl; // this will print an undifined value
+	ptr = deserialize(nb);
+	std::cout << "ptr -> name = " << ptr->test << std::endl; // this will print string test
 }

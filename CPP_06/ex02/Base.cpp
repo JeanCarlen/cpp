@@ -6,7 +6,7 @@
 /*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 15:45:27 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/01/30 15:29:55 by jcarlen          ###   ########.ch       */
+/*   Updated: 2023/01/31 10:55:17 by jcarlen          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,29 @@ Base* Base::generate(void)
 	srand(time(NULL));
 	switch(rand() % 3) 
 	{
-		case 1:
+		case 0:
 			std::cout << "Type A created." << std::endl;
 			return new A;
-		case 2:
+		case 1:
 			std::cout << "Type B created." << std::endl;
 			return new B;
-		case 3:
+		case 2:
 			std::cout << "Type C created." << std::endl;
 			return new C;
+		default:
+			std::cout << "Error in generation" << std::endl;
+			return(NULL);
 	}
 	return (NULL);
 }
 
 void	Base::identify(Base* p)
 {
+	if(p == NULL)
+	{
+		std::cout << "pointer doesn't exist" << std::endl;
+		return;
+	}
 	if (dynamic_cast<A *>(p))
 		std::cout << "Pointer is type A." << std::endl;
 	else if (dynamic_cast<B *>(p))
@@ -46,7 +54,7 @@ void	Base::identify(Base* p)
 	else if (dynamic_cast<C *>(p))
 		std::cout << "Pointer is type C." << std::endl;
 	else
-		std::cout << "Cannot identify pointer type." << std::endl;
+		std::cout << "Cannot identify pointer type!" << std::endl;
 }
 
 void	Base::identify(Base& p)
@@ -77,9 +85,9 @@ void	Base::identify(Base& p)
 		(void)c;
 		std::cout << "Reference is type C." << std::endl;
 	} 
-	catch (std::exception& exception)
+	catch (std::exception &e)
 	{
-		std::cout << "Cannot identify pointer type." << std::endl;
+		(void)e;
 	}
 }
 
