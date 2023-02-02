@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeancarlen <jeancarlen@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 14:33:44 by jeancarlen        #+#    #+#             */
-/*   Updated: 2023/01/24 13:57:13 by jeancarlen       ###   ########.fr       */
+/*   Updated: 2023/01/31 14:17:37 by jcarlen          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main( void )
 	try 
 	{
 		Bureaucrat bureaucrat("Ash",11);
-		Form form("Formulary", 10, 20);
+		Form form("Formulary one", 10, 20);
 		bureaucrat.signForm(form);
 		std::cout << form << std::endl;
 	}
@@ -33,7 +33,7 @@ int main( void )
 	try 
 	{
 		Bureaucrat bureaucrat("Steven", 2);
-		Form form("Formulary", 10, 20);
+		Form form("Formulary two", 10, 20);
 		bureaucrat.signForm(form);
 		std::cout << form << std::endl;
 	}

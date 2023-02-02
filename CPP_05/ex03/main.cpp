@@ -78,6 +78,8 @@ int	main(void)
 
 	rrf = someRandomIntern.makeForm("robotomy request", "Bender"); 
 	ffs = someRandomIntern.makeForm("FFS request", "Billy bob");
+
+	delete rrf;
 	}
 
 	return (0);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeancarlen <jeancarlen@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 14:00:12 by jeancarlen        #+#    #+#             */
-/*   Updated: 2023/01/24 14:44:50 by jeancarlen       ###   ########.fr       */
+/*   Updated: 2023/02/01 11:18:37 by jcarlen          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,6 @@ void	ShrubberyCreationForm::execute(Bureaucrat& executor) const
 		std::ofstream out;
 		out.open((this->getTarget() + "_shrubbery").c_str(), std::ofstream::in | std::ofstream::trunc);
 		out << ShrubberyCreationForm::_tree;
+		out.close();
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeancarlen <jeancarlen@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 13:49:36 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/01/24 14:19:16 by jeancarlen       ###   ########.fr       */
+/*   Updated: 2023/01/31 15:15:41 by jcarlen          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,16 @@ void Form::beSigned(Bureaucrat &signer)
 	}
 	if(signer.getGrade() > this->_signe)
 		throw Bureaucrat::GradeTooLowException();
+}
+
+const char	*Form::GradeTooHighException::what() const throw()
+{
+	return ("Form Grade too high");
+}
+
+const char	*Form::GradeTooLowException::what() const throw()
+{
+	return ("Form: Grade too low");
 }
 
 const char	*Form::NotSignedException::what() const throw()

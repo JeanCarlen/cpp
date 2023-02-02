@@ -6,7 +6,7 @@
 /*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:46:32 by fmalizia          #+#    #+#             */
-/*   Updated: 2023/02/01 16:52:49 by jcarlen          ###   ########.ch       */
+/*   Updated: 2023/02/01 17:28:06 by jcarlen          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,27 @@
 
 #define N 5
 
+class test
+{
+	public:
+			template <typename T>
+			void	prant(T &i)
+			{
+				std::cout << "test 1\n";
+				std::cout << i << std::endl;
+			};
+};
+
 int main( void )
 {
+	test *a = new test;
+	void(test::*func)(int);
+	func = &test::prant;
+
 	int arr1[] = { 1, 2, 3, 4, 5 };
 
 	std::cout << "arr1: " << std::endl;
-	iter(arr1, N, &print);
+	iter(arr1, N, func);
 
 	double arr2[] = { 1.1, 2.2, 3.3, 4.4, 5.5 };
 

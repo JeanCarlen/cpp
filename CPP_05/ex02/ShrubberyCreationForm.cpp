@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeancarlen <jeancarlen@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 14:00:12 by jeancarlen        #+#    #+#             */
-/*   Updated: 2023/01/24 14:44:50 by jeancarlen       ###   ########.fr       */
+/*   Updated: 2023/02/01 11:03:49 by jcarlen          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ std::string	ShrubberyCreationForm::getTarget(void) const
 	return (this->_target);
 }
 
-void	ShrubberyCreationForm::execute(Bureaucrat& executor) const
+void	ShrubberyCreationForm::execute(Bureaucrat const& executor) const
 {
 	if (executor.getGrade() > this->getExecGrade())
 		throw Bureaucrat::GradeTooLowException();
@@ -66,5 +66,6 @@ void	ShrubberyCreationForm::execute(Bureaucrat& executor) const
 		std::ofstream out;
 		out.open((this->getTarget() + "_shrubbery").c_str(), std::ofstream::in | std::ofstream::trunc);
 		out << ShrubberyCreationForm::_tree;
+		out.close();
 	}
 }

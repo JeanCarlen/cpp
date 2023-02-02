@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeancarlen <jeancarlen@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 14:00:06 by jeancarlen        #+#    #+#             */
-/*   Updated: 2023/01/24 14:24:46 by jeancarlen       ###   ########.fr       */
+/*   Updated: 2023/01/31 14:23:26 by jcarlen          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ std::string	RobotomyRequestForm::getTarget(void) const
 	return (this->_target);
 }
 
-void	RobotomyRequestForm::execute(Bureaucrat& executor) const
+void	RobotomyRequestForm::execute(Bureaucrat const& executor) const
 {
 	if (executor.getGrade() > this->getExecGrade())
 		throw Bureaucrat::GradeTooLowException();

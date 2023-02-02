@@ -6,7 +6,7 @@
 /*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:02:57 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/01/27 11:45:49 by jcarlen          ###   ########.ch       */
+/*   Updated: 2023/02/02 16:34:27 by jcarlen          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,17 @@
 # include <fstream>
 # include <limits>
 # include <string>
+# include <cfloat>
 
 class Converter
 {
-	private:
-			const std::string	_value;
-			int		Cint();
-			char 	Cchar();
-			float	Cfloat();
-			double 	Cdouble();
-
-
-	public:
-			Converter();
-			~Converter();
-			Converter(const std::string& value);
-			Converter(Converter &og);
-			Converter	&operator=(Converter const &rhs);
-
-
-			void	Print_1(std::string av);
-			void	Print_2(std::string av);
-			void 	Convert(std::string av);
-
+public:
+	Converter();
+	Converter(const Converter& og);
+	Converter& operator=(const Converter& rhs);
+	Converter(std::string av);
+	~Converter();
+	void PrintValue(std::string av);
 };
 
 #endif

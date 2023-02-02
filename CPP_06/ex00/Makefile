@@ -6,13 +6,13 @@
 #    By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/19 14:03:30 by jcarlen           #+#    #+#              #
-#    Updated: 2023/01/27 12:21:53 by jcarlen          ###   ########.ch        #
+#    Updated: 2023/02/02 16:34:16 by jcarlen          ###   ########.ch        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = out
 
-SRCS =	main.cpp Converter.cpp
+SRCS =	main.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 

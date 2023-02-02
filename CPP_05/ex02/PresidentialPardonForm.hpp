@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeancarlen <jeancarlen@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 14:00:03 by jeancarlen        #+#    #+#             */
-/*   Updated: 2023/01/24 14:13:15 by jeancarlen       ###   ########.fr       */
+/*   Updated: 2023/01/31 14:53:20 by jcarlen          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class PresidentialPardonForm : public Form
 
 			std::string	getTarget() const;
 
-			void	execute(Bureaucrat &executor) const;
+			void	execute(Bureaucrat const& executor) const;
 };
 
 
